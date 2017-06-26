@@ -1,6 +1,10 @@
 {
-    "appSecret": "d2c1f8dd937291bqazf97dfb61e04be0a",
-    "pageAccessToken": "EAANStsRub8QBAAARRHYESHxgQ5ZCEBZBNqF9CIbppwojjZCUkiyGzQEguQVclXEyz6ZBGbF8FvYEyr85Qe2yZAgg3Ub1ZB8UNslmcgZATEy5b2t9uQvhXRXdNduJ4K0GfmAciZAhOPymgEMsSihsCnT1CesSZCWHjMgnwzROKGoEcewZDZD",
-    "validationToken": "0921833117",
-    "serverURL": "https://chatbot-jamesshieh0510.c9users.io/webhook"
+    "appSecret": "689d190f96c9e03775ecb6c23f35a05d",
+    
+"pageAccessToken": "EAAYRUCSb4R0BAIYXU7IDZBuwvKeKg47Uzhmw0N6CBu9WKiJPLLFeVEdVLg3LsmhdWFN6NgmAlGLGLlIhwuFUvHFA6T2XSZAqXKAFL8mErdfwYIw0EkuPfdAUbGpluRZC3sO4ZCKyR5ruVdl0Y6CKkK48fUFdWoc4bRgsfCreALEHIyxTxhxG",
+
+
+    "validationToken": "0918235898",
+   
+ "serverURL": "https://robotteam.herokuapp.com/webhook"
 }
