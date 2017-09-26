@@ -7,5 +7,5 @@
 
     "validationToken": "ncku",
    
- "serverURL": "https://robotteam.herokuapp.com/webhook"
+ "serverURL": "https://nckubot.herokuapp.com/webhook"
 }
