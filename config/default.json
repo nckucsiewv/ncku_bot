@@ -1,10 +1,11 @@
 {
     "appSecret": "689d190f96c9e03775ecb6c23f35a05d",
     
-"pageAccessToken": "EAAYRUCSb4R0BAIYXU7IDZBuwvKeKg47Uzhmw0N6CBu9WKiJPLLFeVEdVLg3LsmhdWFN6NgmAlGLGLlIhwuFUvHFA6T2XSZAqXKAFL8mErdfwYIw0EkuPfdAUbGpluRZC3sO4ZCKyR5ruVdl0Y6CKkK48fUFdWoc4bRgsfCreALEHIyxTxhxG",
+"pageAccessToken": "EAAYRUCSb4R0BAIYXU7IDZBuwvKeKg47Uzhmw0N6CBu9WKiJPLLFeVEdVLg3LsmhdWFN6NgmAlGLGLlIhwuFUvHFA6T2XSZAqXKAFL8mErdfwYIw0EkuPfdAUbGpluRZC3sO4ZCKyR5ruVdl0Y6CKkK48fUFdWoc4bRgsfCreALEHIyxTxhxG",
 
 
-    "validationToken": "0918235898",
+
+    "validationToken": "ncku",
    
  "serverURL": "https://robotteam.herokuapp.com/webhook"
 }
