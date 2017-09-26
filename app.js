@@ -1,32 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @minipiglucy0215
- Sign out
- Watch 4
-  Star 0
- Fork 1 minipiglucy0215/robot_sample
- Code  Issues 0  Pull requests 1  Projects 0  Wiki  Settings Insights 
-Branch: master Find file Copy pathrobot_sample/app.js
-e8e7213  8 days ago
-@minipiglucy0215 minipiglucy0215 註解mongodb
-3 contributors @minipiglucy0215 @vb123er951 @lucy0215
-RawBlameHistory     
-2570 lines (2431 sloc)  320 KB
-/*
- * Copyright 2016-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
-/* jshint node: true, devel: true */
 'use strict';
 
 const 
@@ -2585,15 +2557,3 @@ function get_testing_data(index){
   return testing_data[index];
 }
 module.exports = app;
-© 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
