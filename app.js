@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @minipiglucy0215
+ Sign out
+ Watch 4
+  Star 0
+ Fork 1 minipiglucy0215/robot_sample
+ Code  Issues 0  Pull requests 1  Projects 0  Wiki  Settings Insights 
+Branch: master Find file Copy pathrobot_sample/app.js
+e8e7213  8 days ago
+@minipiglucy0215 minipiglucy0215 註解mongodb
+3 contributors @minipiglucy0215 @vb123er951 @lucy0215
+RawBlameHistory     
+2570 lines (2431 sloc)  320 KB
 /*
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -17,6 +36,7 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
+  
 /*// Retrieve
 var MongoClient = require('mongodb').MongoClient;
 // Connect to the db
@@ -26,12 +46,13 @@ MongoClient.connect("mongodb://218.164.15.139:27017/db", function(err, db) {
   }
 });*/
 
-require('./lib/db_mongo');
-var mongoose = require('mongoose');
+
+//require('./lib/db_mongo'); **********************************************            
+var mongoose = require('mongoose');       
 var brain=require("brain");
 //var training_data_model = mongoose.model('training_data');
 //var target_data_model = mongoose.model('target_data');
-var device_list_model = mongoose.model('devices');
+//var device_list_model = mongoose.model('devices');  ***********************
 //You can set the number and size of your hidden layers,
 var net =new brain.NeuralNetwork(
     {
@@ -44,7 +65,7 @@ var net =new brain.NeuralNetwork(
       //   global learning rate, useful when training using streams
       learningRate: 0.78
     }
-  );
+  ); 
 
 
 var app = express();
@@ -264,12 +285,13 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
-    if (messageText=="how are you"){
+   /* if (messageText=="how are you"){
       sendTextMessage(senderID, "I'm fine.");
       return;
     }
- // sendTextMessage(senderID, getAnswer(messageText,event));***************回復話語
-  return;
+  //sendTextMessage(senderID,messageText);   //回傳使用者所打的文字
+  sendTextMessage(senderID, getAnswer(messageText,event));  //進入到answer function
+  return;*/
   if (isEcho) {
     // Just logging message echoes to console
     
@@ -454,7 +476,8 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url: SERVER_URL + "/assets/rift.png"
+          //url: SERVER_URL + "/assets/rift.png"
+		  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
         }
       }
     }
@@ -971,11 +994,7 @@ function getAnswer(send_text,event){
 		  reply_msg="your condition is "+JSON.stringify(question)+"\n";
 		  reply_msg+=getNNResult(question);
 	    break;
-
-	  case "hello! Mr.Wang, I want to know my grade will be good or not?":
-	    reply_msg='OK! I will ask you some questions, for understand your situation\n';
-	    reply_msg+='It will be good for help me to predict your grade...';
-	    break;
+ 
 	 
 	  case "OK":
 	    reply_msg='how long have you study?\n';
@@ -2566,3 +2585,15 @@ function get_testing_data(index){
   return testing_data[index];
 }
 module.exports = app;
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
