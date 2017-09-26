@@ -17,6 +17,14 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
+/*// Retrieve
+var MongoClient = require('mongodb').MongoClient;
+// Connect to the db
+MongoClient.connect("mongodb://218.164.15.139:27017/db", function(err, db) {
+  if(!err) {
+    console.log("We are connected mongodb");
+  }
+});*/
 
 require('./lib/db_mongo');
 var mongoose = require('mongoose');
