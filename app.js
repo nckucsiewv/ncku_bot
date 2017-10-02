@@ -449,8 +449,8 @@ function sendImageMessage(recipientId) {
         type: "image",
         payload: {
           //url: SERVER_URL + "/assets/rift.png"
-		  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
-		//url: "https://ibb.co/cOBJyw"
+		  //url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
+		url: "https://imgur.com/i1T0imn"
         }
       }
     }
