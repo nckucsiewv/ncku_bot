@@ -257,13 +257,13 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
-    if (messageText=="how are you"){
+   /* if (messageText=="how are you"){
       sendTextMessage(senderID, "I'm fine.");
       return;
     }
   //sendTextMessage(senderID,messageText);   //回傳使用者所打的文字
   sendTextMessage(senderID, getAnswer(messageText,event));  //進入到answer function
-  return;
+  return;*/
   if (isEcho) {
     // Just logging message echoes to console
     
