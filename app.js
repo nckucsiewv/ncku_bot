@@ -257,13 +257,13 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
-   /* if (messageText=="how are you"){
+    if (messageText=="how are you"){
       sendTextMessage(senderID, "I'm fine.");
       return;
     }
   //sendTextMessage(senderID,messageText);   //回傳使用者所打的文字
   sendTextMessage(senderID, getAnswer(messageText,event));  //進入到answer function
-  return;*/
+  return;
   if (isEcho) {
     // Just logging message echoes to console
     
@@ -449,8 +449,8 @@ function sendImageMessage(recipientId) {
         type: "image",
         payload: {
           //url: SERVER_URL + "/assets/rift.png"
-		  //url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
-		url: "https://imgur.com/i1T0imn"
+		  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
+		//url: "https://imgur.com/i1T0imn"
         }
       }
     }
