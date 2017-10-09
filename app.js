@@ -20,33 +20,7 @@ const
   
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
-// Connect to the db
-/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
-  if(!err) {
-    console.log("We are connected mongodb");
-	db.collection('Persons',function(err,collection){
-    /*collection.insert({ id:1, firstName:'Steve', lastName:'Jobs' });
-    collection.insert({ id:2, firstName:'Bill', lastName:'Gates' });
-    collection.insert({ id:3, firstName:'James', lastName:'Bond' });//新增
-	
-    //collection.remove({});//刪除collection
-	
-	//collection.find({firstName:"Bill"}).toArray(function(err,items){
-            if(err) throw err;
-            console.log(items);
-            console.log("We found "+items.length+" results!");
-        });//查詢
-    collection.count(function(err,count){
-        if(err) throw err;
-        console.log('Total Rows:'+count);
-    });
-  });
-  db.close(); //關閉連線
-  
-}
-});*/
-
-    
+   
 //require('./lib/db_mongo');  ************************************************
 //var mongoose = require('mongoose');  ************** ************************     
 var brain=require("brain");
@@ -340,7 +314,7 @@ function receivedMessage(event) {
       messageId, quickReplyPayload);
     //sendTextMessage(senderID, "Quick reply tapped");
 		if(quickReplyPayload == "subscription_csie"){
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 			if(!err) {
 			console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
@@ -348,7 +322,7 @@ function receivedMessage(event) {
 			});
 			db.close(); //關閉連線
 			}
-		});
+		});*/
 		sendTextMessage(senderID, "訂閱成功囉^0^");
 		}
 	
@@ -444,7 +418,7 @@ function receivedPostback(event) {
 		sendQuickReply(senderID);
 	}
 	if(payload == "query"){
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 		db.collection('subscription',function(err,collection){
@@ -456,11 +430,11 @@ function receivedPostback(event) {
 		});
 	    db.close(); //關閉連線
   		}
-		});
+		});*/
 		sendTextMessage(senderID, "您已訂閱資工￣︶￣");
 	}
 	if(payload == "cancel"){
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
@@ -468,7 +442,7 @@ function receivedPostback(event) {
 			db.close(); //關閉連線
 			});
 		}
-		});
+		});*/
 		sendTextMessage(senderID, "取消訂閱成功︶︿︶");
 	}
 }
