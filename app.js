@@ -248,7 +248,7 @@ function receivedMessage(event) {
       messageId, quickReplyPayload);
     //sendTextMessage(senderID, "Quick reply tapped");
 		if(quickReplyPayload == "subscription_csie"){
-		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 			if(!err) {
 			console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
@@ -256,7 +256,7 @@ function receivedMessage(event) {
 			});
 			db.close(); //關閉連線
 			}
-		});*/
+		});
 		sendTextMessage(senderID, "訂閱成功囉^0^");
 		}
 	
@@ -352,7 +352,7 @@ function receivedPostback(event) {
 		sendQuickReply(senderID);
 	}
 	if(payload == "query"){
-		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 		db.collection('subscription',function(err,collection){
@@ -364,11 +364,11 @@ function receivedPostback(event) {
 		});
 	    db.close(); //關閉連線
   		}
-		});*/
+		});
 		sendTextMessage(senderID, "您已訂閱資工￣︶￣");
 	}
 	if(payload == "cancel"){
-		/*MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
@@ -376,7 +376,7 @@ function receivedPostback(event) {
 			db.close(); //關閉連線
 			});
 		}
-		});*/
+		});
 		sendTextMessage(senderID, "取消訂閱成功︶︿︶");
 	}
 }
@@ -479,7 +479,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "哈囉!資工女排很高興為您服務v(￣︶￣)y*****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
+          text: "哈囉!資工女排很高興為您服務v(￣︶￣)y                                  *****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
