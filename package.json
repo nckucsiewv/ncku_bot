@@ -16,12 +16,15 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "brain": "^0.7.0",
     "config": "^1.20.4",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
+    "fb-bot-framework": "^0.3.0",
+    "mongodb": "^2.2.31",
     "request": "^2.72.0"
   },
   "engines": {
-    "node": "~4.1.2"
+    "node": "^6.11.3"
   }
 }
