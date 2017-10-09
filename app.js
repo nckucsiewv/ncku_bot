@@ -185,44 +185,7 @@ function verifyRequestSignature(req, res, buf) {
     }
   }
 }
- 
-/*function setupGetStartedButton(res){
-        var messageData = {
-                "get_started":[
-                {
-                    "payload":"USER_DEFINED_PAYLOAD"
-                    }
-                ]
-        };
 
-        // Start the request
-        request({
-            url: 'https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+ PAGE_ACCESS_TOKEN,
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            form: messageData
-        },
-        function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                // Print out the response body
-                res.send(body);
-
-            } else { 
-                // TODO: Handle errors
-                res.send(body);
-            }
-        });
-    }*/       
-
-
-/*
- * Authorization Event
- *
- * The value for 'optin.ref' is defined in the entry point. For the "Send to 
- * Messenger" plugin, it is the 'data-ref' field. Read more at 
- * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
- *
- */
 function receivedAuthentication(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
@@ -243,25 +206,7 @@ function receivedAuthentication(event) {
   // to let them know it was successful.
   sendTextMessage(senderID, "Authentication successful");
 }
- 
- 
-
-/*
- * Message Event
- *
- * This event is called when a message is sent to your page. The 'message' 
- * object format can vary depending on the kind of message that was received.
- * Read more at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received
- *
- * For this example, we're going to echo any text that we get. If we get some 
- * special keywords ('button', 'generic', 'receipt'), then we'll send back
- * examples of those bubbles to illustrate the special message bubbles we've 
- * created. If we receive a message with an attachment (image, video, audio), 
- * then we'll simply confirm that we've received the attachment.
- * 
- */
-
-	  
+   
 function receivedMessage(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
@@ -534,7 +479,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "哈囉!資工女排很高興為您服務v(￣︶￣)y                                  *****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
+          text: "哈囉!資工女排很高興為您服務v(￣︶￣)y*****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
@@ -640,7 +585,7 @@ function sendQuickReply(recipientId) {
       id: recipientId
     },
     message: {
-      text: "請選擇訂閱隊伍⊙△⊙                    (只限一隊)",
+      text: "請選擇訂閱隊伍⊙△⊙(只限一隊)",
       quick_replies: [
         {
           "content_type":"text",
