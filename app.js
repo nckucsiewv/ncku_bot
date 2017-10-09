@@ -286,8 +286,11 @@ function receivedMessage(event) {
       case 'quick reply':
         sendQuickReply(senderID);
         break;        
-	  case '資工':
+      case '資工':
          sendTimeTextMessage(senderID, messageText);
+        break;
+      case '謝謝':
+         sendThankTextMessage(senderID, messageText);
         break;
 
       default:
@@ -468,7 +471,19 @@ function sendTimeTextMessage(recipientId, messageText) {
 
   callSendAPI(messageData);
 }
+function sendThankTextMessage(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "愛你｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡",
+      metadata: "DEVELOPER_DEFINED_METADATA"
+    }
+  };
 
+  callSendAPI(messageData);
+}
 function sendHiButtonMessage(recipientId) {
   var messageData = {
     recipient: {
