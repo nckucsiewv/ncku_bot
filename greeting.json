@@ -1,3 +1,8 @@
 {
-   "result": "success"
+  "greeting":[
+    {
+      "locale":"default",
+      "text":"哈囉!資訊女排很高興為您服務~\r\r***想要再呼叫我請輸入hi***\r\rv(￣︶￣)y "
+    }
+  ] 
 }
