@@ -278,6 +278,10 @@ function receivedMessage(event) {
       case 'hi':
         sendHiButtonMessage(senderID);
         break;
+		    
+     case 'Hi':
+        sendHiButtonMessage(senderID);
+        break;
 
       case 'generic':
         sendGenericMessage(senderID);
