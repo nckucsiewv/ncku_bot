@@ -1,0 +1,138 @@
+<html>
+<head>
+<style>
+	team	{color:green; font-size:small;}
+    item	{color:blue;}
+    score	{color:red; font-size:small;}
+</style>
+</head>
+
+
+<body>
+<button type="button" id="day1"onclick="day1()">11/04</button>
+<button type="button" id="day2"onclick="day2()">11/05</button>
+<button type="button" id="day3"onclick="day3()">11/11</button>
+<button type="button" id="day4"onclick="day4()">11/12</button>
+<br><br>
+<div id="bulletin">
+<form action="broadcast()">
+<input type="submit" id="submit" onclick="broadcast()" value="公告"><br>
+<input type="radio" name="depart" id="CSIE" value="CSIE">資訊
+<input type="radio" name="depart" id="CIVIL" value="CIVIL">土木
+<input type="radio" name="depart" id="EE" value="EE">電機
+<input type="radio" name="depart" id="CHE" value="CHE">化工
+<input type="radio" name="depart" id="ECO" value="ECO">經濟
+<input type="radio" name="depart" id="LAW" value="LAW">法律
+<input type="radio" name="depart" id="ARCH" value="ARCH">建築
+<input type="radio" name="depart" id="IIM" value="IIM">工資管<br>
+<input type="radio" name="depart" id="AA" value="AA">航太
+<input type="radio" name="depart" id="MSE" value="MSE">材料
+<input type="radio" name="depart" id="HYD" value="HYD">水利
+<input type="radio" name="depart" id="HIS" value="HIS">歷史
+<input type="radio" name="depart" id="ACC" value="ACC">會計
+<input type="radio" name="depart" id="MED" value="MED">醫學
+<input type="radio" name="depart" id="ID" value="ID">工設
+<input type="radio" name="depart" id="PHAR" value="PHAR">藥學
+<br><br>
+</form>
+</div>
+<!--<p id="demo"></p>--->
+
+<div id="table">
+<table border="1" height="400" id="table1"> 
+	<tr height="50">
+    	<th width="50"><item>時間</item></th>
+        <th width="130"><item>光復四場</item></th>
+        <th width="80"><item>比分</item></th>
+        <th width="130"><item>光復五場</item></th>
+        <th width="80"><item>比分</item></th>
+        <th width="130"><item>光復東場</item></th>
+        <th width="80"><item>比分</item></th>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+    <tr height="50">
+		<th colspan="7" height="50">午休
+        </th>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+    <tr>
+		<th width="50"><item>時間</item></th>
+        <td width="130" align="center"><team>電機vs資訊</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復五場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+        <td width="130" align="center"><team>光復東場</team></td>
+        <td width="80" align="center"><score>比分</score></td>
+    </tr>
+</table> 
+</div>
+
+<script>
+function day1(){}
+function day2(){}
+function day3(){}
+function day4(){}
+function broadcast(){}
+</script>
+
+<script>
+var cars = new Array("資訊","工資管","台文","水利","土木");
+document.getElementById("demo").innerHTML = cars[2];
+
+var t = document.getElementById("table1"); 
+t.row[0].cells[0].innerText = cars[2];
+/*for(var i=0;i<8;i++) { 
+   t.insertRow(); 
+   for(var j=0;j<4;j++) { 
+      t.rows[i].insertCell(j); 
+      t.rows[i].cells[j].innerText = cars[i]; 
+   }    
+} 
+*/
+</script>
+
+</body>
+</html>
