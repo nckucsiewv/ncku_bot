@@ -290,7 +290,7 @@ function receivedMessage(event) {
       case 'quick reply':
         sendQuickReply(senderID);
         break;        
-      case '資工':
+      case '資訊':
          sendTimeTextMessage(senderID, messageText);
         break;
       case '謝謝':
@@ -375,7 +375,7 @@ function receivedPostback(event) {
 	    db.close(); //關閉連線
   		}
 		});
-		sendTextMessage(senderID, "您已訂閱資工￣︶￣");
+		sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
 	}
 	if(payload == "cancel"){
 		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
@@ -484,7 +484,7 @@ function sendThankTextMessage(recipientId, messageText) {
       id: recipientId
     },
     message: {
-      text: "愛你｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡",
+      text: "愛你  ｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡",
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
@@ -501,7 +501,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "    *****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
+          text: "    *****查詢隊伍賽程請輸入系隊簡稱ex:資訊、工資管*****",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
@@ -611,7 +611,7 @@ function sendQuickReply(recipientId) {
       quick_replies: [
         {
           "content_type":"text",
-          "title":"資工",
+          "title":"資訊",
           "payload":"subscription_csie"
         },
         {
