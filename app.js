@@ -349,7 +349,7 @@ function receivedPostback(event) {
   //sendTextMessage(senderID, "Postback");
   
 	if(payload == "get_start"){
-		sendButtonMessage(senderID);
+		sendHiButtonMessage(senderID);
 	}
 	if(payload == "hi_ask"){
 		sendButtonMessage(senderID);
@@ -497,7 +497,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "哈囉!資工女排很高興為您服務v(￣︶￣)y                                  *****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
+          text: "    *****查詢隊伍賽程請輸入系隊簡稱ex:資工、工資管*****",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
