@@ -348,6 +348,9 @@ function receivedPostback(event) {
     "at %d", senderID, recipientID, payload, timeOfPostback);
   //sendTextMessage(senderID, "Postback");
   
+	if(payload == "get_start"){
+		sendButtonMessage(senderID);
+	}
 	if(payload == "hi_ask"){
 		sendButtonMessage(senderID);
 	}
