@@ -300,7 +300,7 @@ function receivedMessage(event) {
 
       default:
         //sendTextMessage(senderID, messageText);
-		sendTextMessage(senderID, "輸入hi   將有機器人為您服務＃￣▽￣＃");
+		sendTextMessage(senderID, "輸入Hi   將有機器人為您服務＃￣▽￣＃");
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
