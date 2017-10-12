@@ -248,7 +248,7 @@ function receivedMessage(event) {
       messageId, quickReplyPayload);
     //sendTextMessage(senderID, "Quick reply tapped");
 		if(quickReplyPayload == "subscription_csie"){
-			var senderID = event.sender.id;
+			
 		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
 			if(!err) {
 			console.log("We are connected mongodb");
