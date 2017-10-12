@@ -249,7 +249,7 @@ function receivedMessage(event) {
     //sendTextMessage(senderID, "Quick reply tapped");
 		if(quickReplyPayload == "subscription_csie"){
 			
-		MongoClient.connect("mongodb://ds115045.mlab.com:15045/admin", function(err, db) {
+		MongoClient.connect("mongodb://ds115045.mlab.com:15045/heroku_7cfmtg4z", function(err, db) {
 			if(!err) {
 			console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
@@ -363,7 +363,7 @@ function receivedPostback(event) {
 		sendQuickReply(senderID);
 	}
 	if(payload == "query"){
-		MongoClient.connect("mongodb://ds115045.mlab.com:15045/admin", function(err, db) {
+		MongoClient.connect("mongodb://ds115045.mlab.com:15045/heroku_7cfmtg4z", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 		db.collection('subscription',function(err,collection){
@@ -379,7 +379,7 @@ function receivedPostback(event) {
 		sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
 	}
 	if(payload == "cancel"){
-		MongoClient.connect("mongodb://ds115045.mlab.com:15045/admin", function(err, db) {
+		MongoClient.connect("mongodb://ds115045.mlab.com:15045/heroku_7cfmtg4z", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
