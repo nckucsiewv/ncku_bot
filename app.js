@@ -504,7 +504,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "輸入Hi 呼叫機器人 \n 欲查詢賽程請輸入隊伍名稱，ex: 資訊",
+          text: "*輸入Hi 呼叫機器人\n*欲查詢賽程請輸入隊伍名稱，ex: 資訊",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
