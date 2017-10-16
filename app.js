@@ -363,11 +363,11 @@ function receivedPostback(event) {
 		sendQuickReply(senderID);
 	}
 	if(payload == "query"){
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
 		if(!err) {
 		console.log("We are connected mongodb");
-		db.collection('subscription',function(err,collection){
-			collection.find({Name:"csie"}).toArray(function(err,items){
+		db.collection('match',function(err,collection){
+			collection.find({Name:"A"}).toArray(function(err,items){
             if(err) throw err;
             console.log(items);
             console.log("We found "+items.length+" results!");
