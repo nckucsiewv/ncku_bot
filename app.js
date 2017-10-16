@@ -376,7 +376,8 @@ function receivedPostback(event) {
 	    db.close(); //關閉連線
   		}
 		});
-		sendTextMessage(senderID, "您已訂閱資訊￣︶￣，想要再呼叫機器人輸入Hi");
+		sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
+		sendHiButtonMessage(senderID);
 	}
 	if(payload == "cancel"){
 		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
@@ -388,7 +389,8 @@ function receivedPostback(event) {
 			});
 		}
 		});
-		sendTextMessage(senderID, "取消訂閱成功︶︿︶，想要再呼叫機器人輸入Hi");
+		sendTextMessage(senderID, "取消訂閱成功︶︿︶");
+		sendHiButtonMessage(senderID);
 	}
 }
 
@@ -502,7 +504,7 @@ function sendHiButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "    *****查詢隊伍賽程請輸入系隊簡稱ex:資訊、工資管*****",
+          text: "輸入Hi 呼叫機器人"\n"欲查詢賽程請輸入隊伍名稱，ex: 資訊",
           buttons:[{
             type: "web_url",
             url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
