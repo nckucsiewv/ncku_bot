@@ -260,7 +260,7 @@ function receivedMessage(event) {
 		});
 		sendTextMessage(senderID, "訂閱成功囉^0^");
 		}
-	
+	 sendHiButtonMessage(senderID);
     return;
   }
   
@@ -376,7 +376,7 @@ function receivedPostback(event) {
 	    db.close(); //關閉連線
   		}
 		});
-		sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
+		sendTextMessage(senderID, "您已訂閱資訊￣︶￣，想要再呼叫機器人輸入Hi");
 	}
 	if(payload == "cancel"){
 		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
@@ -388,7 +388,7 @@ function receivedPostback(event) {
 			});
 		}
 		});
-		sendTextMessage(senderID, "取消訂閱成功︶︿︶");
+		sendTextMessage(senderID, "取消訂閱成功︶︿︶，想要再呼叫機器人輸入Hi");
 	}
 }
 
