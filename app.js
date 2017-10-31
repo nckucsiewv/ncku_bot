@@ -6,7 +6,8 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
-  
+
+
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
    
@@ -30,6 +31,10 @@ var net =new brain.NeuralNetwork(
     }
   ); 
 
+//quickReply
+var count_team ;
+//receivedPostback
+var subscription_team;
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -247,20 +252,529 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
     //sendTextMessage(senderID, "Quick reply tapped");
+		if(quickReplyPayload == "QuickReply_A"){
+			sendQuickReply_A(senderID);
+		}
+		if(quickReplyPayload == "QuickReply_B"){
+			sendQuickReply_B(senderID);
+		}
+		if(quickReplyPayload == "QuickReply_C"){
+			sendQuickReply_C(senderID);
+		}
+		
 		if(quickReplyPayload == "subscription_csie"){
 			
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
 			if(!err) {
-			console.log("We are connected mongodb");
-			db.collection('subscription',function(err,collection){
-			collection.insert({ id:senderID, Name:'csie' });
-			});
-			db.close(); //關閉連線
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'E' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'E' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
 			}
 		});
-		sendTextMessage(senderID, "訂閱成功囉^0^");
+		sendTextMessage(senderID, "訂閱資訊成功囉^0^");
+		sendHiButtonMessage(senderID);
 		}
-	 sendHiButtonMessage(senderID);
+		
+		if(quickReplyPayload == "subscription_ee"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'C' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'C' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱電機成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_civil"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'K' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'K' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱土木成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		
+		if(quickReplyPayload == "subscription_che"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'F' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'F' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱化工成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+
+		if(quickReplyPayload == "subscription_law"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'H' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'H' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱法律成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_arch"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'L' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'L' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱建築成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_iim"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'N' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'N' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱工資管成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_aa"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'J' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'J' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱航太成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_mse"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'D' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'D' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱材料成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_hyd"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'P' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'P' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱水利成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_his"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'I' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'I' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱歷史成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_acc"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'B' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'B' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱會計成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_med"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'G' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'G' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱醫學成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_id"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'O' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'O' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱工設成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_phar"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'A' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'A' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱藥學成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
+		if(quickReplyPayload == "subscription_eco"){
+			
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('subscription',function(err,collection){
+					collection.find({User_id:senderID}).toArray(function(err,items){
+						if(err) throw err;
+						console.log(items);
+						console.log("We found "+items.length+" results!");
+						count_team=items.length;
+						console.log(count_team);
+					if(count_team==0){
+						res = collection.insert({ User_id:senderID,Name:'M' });
+						console.log(res);
+					}else{
+							
+						collection.update({ User_id:senderID},{$set:{Name:'M' }});
+						
+					}
+					db.close(); //關閉連線
+					});//查詢
+				
+				});
+		
+			}
+		});
+		sendTextMessage(senderID, "訂閱經濟成功囉^0^");
+		sendHiButtonMessage(senderID);
+		}
+		
     return;
   }
   
@@ -344,7 +858,8 @@ function receivedPostback(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfPostback = event.timestamp;
-
+  
+  
   // The 'payload' param is a developer-defined field which is set in a postback 
   // button for Structured Messages. 
   var payload = event.postback.payload;
@@ -359,32 +874,91 @@ function receivedPostback(event) {
 	if(payload == "hi_ask"){
 		sendButtonMessage(senderID);
 	}
+	if(payload == "hi_image"){
+		sendImageMessage(senderID);
+	}
 	if(payload == "subscription"){
+	
 		sendQuickReply(senderID);
 	}
 	if(payload == "query"){
+		
 		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
-		if(!err) {
-		console.log("We are connected mongodb");
-		db.collection('match',function(err,collection){
-			collection.find({Name:"A"}).toArray(function(err,items){
+		
+			if(!err) {
+			console.log("We are connected mongodb");
+			db.collection('subscription',function(err,collection){
+			collection.find({User_id:senderID}).toArray(function(err,items){
             if(err) throw err;
-            console.log(items);
+			console.log(items);
             console.log("We found "+items.length+" results!");
+			subscription_team=items[0].Name;	
+			console.log(subscription_team);
+			
+				if(subscription_team == "A"){
+				sendTextMessage(senderID, "您已訂閱藥學￣︶￣");
+				}
+				if(subscription_team == "B"){
+				sendTextMessage(senderID, "您已訂閱會計￣︶￣");
+				}
+				if(subscription_team == "C"){
+				sendTextMessage(senderID, "您已訂閱電機￣︶￣");
+				}
+				if(subscription_team == "D"){
+				sendTextMessage(senderID, "您已訂閱材料￣︶￣");
+				}
+				if(subscription_team == "E"){
+				sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
+				}
+				if(subscription_team == "F"){
+				sendTextMessage(senderID, "您已訂閱化工￣︶￣");
+				}
+				if(subscription_team == "G"){
+				sendTextMessage(senderID, "您已訂閱醫學￣︶￣");
+				}
+				if(subscription_team == "H"){
+				sendTextMessage(senderID, "您已訂閱法律￣︶￣");
+				}
+				if(subscription_team == "I"){
+				sendTextMessage(senderID, "您已訂閱歷史￣︶￣");
+				}
+				if(subscription_team == "J"){
+				sendTextMessage(senderID, "您已訂閱航太￣︶￣");
+				}
+				if(subscription_team == "K"){
+				sendTextMessage(senderID, "您已訂閱土木￣︶￣");
+				}
+				if(subscription_team == "L"){
+				sendTextMessage(senderID, "您已訂閱建築￣︶￣");
+				}
+				if(subscription_team == "M"){
+				sendTextMessage(senderID, "您已訂閱經濟￣︶￣");
+				}
+				if(subscription_team == "N"){
+				sendTextMessage(senderID, "您已訂閱工資管￣︶￣");
+				}
+				if(subscription_team == "O"){
+				sendTextMessage(senderID, "您已訂閱工設￣︶￣");
+				}
+				if(subscription_team == "P"){
+				sendTextMessage(senderID, "您已訂閱水利￣︶￣");
+				}
+			
 			});//查詢
+			});
+			db.close(); //關閉連線
+			}
 		});
-	    db.close(); //關閉連線
-  		}
-		});
-		sendTextMessage(senderID, "您已訂閱資訊￣︶￣");
+		
 		sendHiButtonMessage(senderID);
 	}
 	if(payload == "cancel"){
-		MongoClient.connect("mongodb://127.0.0.1:27017/admin", function(err, db) {
+		MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+		
 		if(!err) {
 		console.log("We are connected mongodb");
 			db.collection('subscription',function(err,collection){
-			collection.remove({});//刪除collection
+			collection.remove({User_id:senderID});//刪除collection
 			db.close(); //關閉連線
 			});
 		}
@@ -445,8 +1019,8 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          //url:"https://docs.google.com/forms/d/e/1FAIpQLSdbt7Enj5tibQOuHV1w8QZ6wIQ2UFOtrAcCg3NoC_PHtLUXiw/viewform"
-		  url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
+          url:"https://imgur.com/c6779h8.jpg"
+		  //url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
         }
       }
     }
@@ -506,9 +1080,14 @@ function sendHiButtonMessage(recipientId) {
           template_type: "button",
           text: "*輸入Hi 呼叫主選單\n*欲查詢賽程請輸入隊伍名稱，ex: 資訊",
           buttons:[{
-            type: "web_url",
-            url: "http://curation.ice.ntnu.edu.tw/cacheimage/1116-1491919514-f4745.jpg",
-            title: "查看總賽程圖"
+            /*type: "web_url",
+            url: "https://imgur.com/c6779h8.jpg",
+            title: "查看總賽程圖"*/
+			
+			type: "postback",
+            title: "查看總賽程圖",
+            payload: "hi_image"
+		   
           }, {
            type: "postback",
            title: "我要訂閱某隊伍的賽程",
@@ -603,8 +1182,37 @@ function sendGenericMessage(recipientId) {
 
   callSendAPI(messageData);
 }
-
 function sendQuickReply(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "請選擇隊伍所屬循環(不知道的話，可查看總賽程圖)",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"甲",
+          "payload":"QuickReply_A"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"乙",
+          "payload":"QuickReply_B"
+        },
+		{
+          "content_type":"text",
+          "title":"丙",
+          "payload":"QuickReply_C"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+function sendQuickReply_A(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -617,16 +1225,7 @@ function sendQuickReply(recipientId) {
           "title":"資訊",
           "payload":"subscription_csie"
         },
-        {
-          "content_type":"text",
-          "title":"工資管",
-          "payload":"subscription_iim"
-        },
-        {
-          "content_type":"text",
-          "title":"工設",
-          "payload":"subscription_id"
-        },
+		
 		{
           "content_type":"text",
           "title":"電機",
@@ -634,8 +1233,20 @@ function sendQuickReply(recipientId) {
         },
 		{
           "content_type":"text",
-          "title":"機械",
-          "payload":"subscription_me"
+          "title":"材料",
+          "payload":"subscription_mse"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"會計",
+          "payload":"subscription_acc"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"藥學",
+          "payload":"subscription_phar"
         }
       ]
     }
@@ -643,7 +1254,99 @@ function sendQuickReply(recipientId) {
 
   callSendAPI(messageData);
 }
+function sendQuickReply_B(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "請選擇訂閱隊伍⊙△⊙(只限一隊)",
+      quick_replies: [
+        
+        {
+          "content_type":"text",
+          "title":"化工",
+          "payload":"subscription_che"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"法律",
+          "payload":"subscription_law"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"航太",
+          "payload":"subscription_aa"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"歷史",
+          "payload":"subscription_his"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"醫學",
+          "payload":"subscription_med"
+        }
+      ]
+    }
+  };
 
+  callSendAPI(messageData);
+}
+function sendQuickReply_C(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "請選擇訂閱隊伍⊙△⊙(只限一隊)",
+      quick_replies: [
+        
+		{
+          "content_type":"text",
+          "title":"土木",
+          "payload":"subscription_civil"
+        },
+        {
+          "content_type":"text",
+          "title":"經濟",
+          "payload":"subscription_eco"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"建築",
+          "payload":"subscription_arch"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"工資管",
+          "payload":"subscription_iim"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"水利",
+          "payload":"subscription_hyd"
+        },
+		
+		{
+          "content_type":"text",
+          "title":"工設",
+          "payload":"subscription_id"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
 function sendTypingOn(recipientId) {
   console.log("Turning typing indicator on");
 
@@ -929,6 +1632,26 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+
+//post method
+//app.use(express.bodyParser());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.post('/', function(req, res){
+    console.log('POST /');
+    console.dir(req.body);
+    //res.writeHead(200, {'Content-Type': 'text/html'});
+	console.log(req.body.time);
+    //res.end(req.body.time);
+	data=req.body.time;
+	//for loop
+	recipientId='1344974895618304';
+	sendTextMessage(recipientId, data) ;
+	var website_url="http://localhost:3000";
+	res.redirect(website_url);
+});
 function get_training_small_data_v2(){
   var training_data=
   [
