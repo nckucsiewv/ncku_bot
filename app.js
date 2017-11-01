@@ -1639,8 +1639,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//
-var push_team_1,push_team_2;
+
+var push_team_1;
+var push_team_2;
+var ii;
 app.post('/', function(req, res){
     console.log('POST /');
     console.dir(req.body);
@@ -1657,7 +1659,9 @@ app.post('/', function(req, res){
 			if(!err) {
 				console.log("We are connected mongodb");
 				db.collection('match',function(err,collection){
-						collection.find({}).toArray(function(err,items){
+					var temp_all_team = [];
+                     
+					collection.find({}).toArray(function(err,items){
 						if(err) throw err;
 						
 						console.log("post_time:" + post_time);
@@ -1671,48 +1675,57 @@ app.post('/', function(req, res){
 								//console.log(items[items_i].team2);
 								push_team_1=items[items_i].team1;
 								push_team_2=items[items_i].team2;
-								
+								temp_all_team.push(push_team_1);
+								temp_all_team.push(push_team_2);
+								console.log(temp_all_team);
 								
 							}
 						}
-						});
+						
+						db.collection('subscription',function(err,collection){
+							//console.log(push_team_1);
+							//console.log(push_team_2);
+							
+								collection.find({}).toArray(function(err,items){
+									if(err) throw err;
+									
+									console.log("共有" + temp_all_team.length + "隊");
+									
+									for(items_i=0;items_i<items.length;items_i ++){
+										
+										for(ii=0;ii<temp_all_team.length;ii++){
+											if(temp_all_team[ii] == items[items_i].Name){
+												console.log("get_userid:" + items[items_i].User_id);
+												get_userid=items[items_i].User_id;
+												recipientId=get_userid;
+												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time ) ;
+																								
+											}else{
+												console.log("NOT_FOUND_USERID");
+											}
+										}
+									}
+								});
+							
+					
+						});//查詢隊伍名稱的user_id	
+						
+						db.close(); //關閉連線
+					});
 						
 				});//查詢db內的post日期與date相同之條件的隊伍名稱
 			
-				db.close(); //關閉連線
-			}
-		}).then({});	
-		
-	MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
-		if(!err) {
-				db.collection('subscription',function(err,collection){
-				   console.log(push_team_1);
-					/*if((push_team_1.match("A") ) || (push_team_2.match("A")){
-							collection.find({Name:"A"}).toArray(function(err,items){
-								if(err) throw err;
-								console.log(items.length);	
-									for(items_i=0;items_i<=items.length;items_i ++){
-																	
-									console.log("get_userid:" + items[items_i].User_id);
-									}
-							});
-					}else{
-							console.log("00000000error");	
-					}*/
-					
-					
-					
-				});//查詢隊伍名稱的user_id
-			db.close(); //關閉連線
-		}
-	});		
 				
+				
+			}
+	});	
+		
+		
 	
 	//推播的USER_ID
-	recipientId='1344974895618304';
+	/*recipientId='1344974895618304';
 	
-	
-	sendTextMessage(recipientId, "賽程時間:" + post_time ) ;
+	sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time ) ;*/
 	
 	var website_url="http://localhost:3000";
 	res.redirect(website_url);
