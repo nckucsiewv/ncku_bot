@@ -1639,16 +1639,81 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+//
+var push_team_1,push_team_2;
 app.post('/', function(req, res){
     console.log('POST /');
     console.dir(req.body);
     //res.writeHead(200, {'Content-Type': 'text/html'});
 	console.log(req.body.time);
     //res.end(req.body.time);
-	data=req.body.time;
-	//for loop
+	post_time=req.body.time;
+	post_date=req.body.date;
+	
+	
+	
+	MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+		
+			if(!err) {
+				console.log("We are connected mongodb");
+				db.collection('match',function(err,collection){
+						collection.find({}).toArray(function(err,items){
+						if(err) throw err;
+						
+						console.log("post_time:" + post_time);
+						console.log("post_date:" + post_date);
+						
+						for(items_i=0;items_i<=34;items_i ++){
+							
+							if((post_time == items[items_i].time) && (post_date == items[items_i].date)){
+								 
+								//console.log(items[items_i].team1);
+								//console.log(items[items_i].team2);
+								push_team_1=items[items_i].team1;
+								push_team_2=items[items_i].team2;
+								
+								
+							}
+						}
+						});
+						
+				});//查詢db內的post日期與date相同之條件的隊伍名稱
+			
+				db.close(); //關閉連線
+			}
+		}).then({});	
+		
+	MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+		if(!err) {
+				db.collection('subscription',function(err,collection){
+				   console.log(push_team_1);
+					/*if((push_team_1.match("A") ) || (push_team_2.match("A")){
+							collection.find({Name:"A"}).toArray(function(err,items){
+								if(err) throw err;
+								console.log(items.length);	
+									for(items_i=0;items_i<=items.length;items_i ++){
+																	
+									console.log("get_userid:" + items[items_i].User_id);
+									}
+							});
+					}else{
+							console.log("00000000error");	
+					}*/
+					
+					
+					
+				});//查詢隊伍名稱的user_id
+			db.close(); //關閉連線
+		}
+	});		
+				
+	
+	//推播的USER_ID
 	recipientId='1344974895618304';
-	sendTextMessage(recipientId, data) ;
+	
+	
+	sendTextMessage(recipientId, "賽程時間:" + post_time ) ;
+	
 	var website_url="http://localhost:3000";
 	res.redirect(website_url);
 });
