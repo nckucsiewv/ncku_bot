@@ -2394,7 +2394,7 @@ app.post('/', function(req, res){
 								push_court=items[items_i].court;
 								temp_all_team.push(push_team_1);
 								temp_all_team.push(push_team_2);
-								temp_all_team.push(push_court);
+								temp_all_court.push(push_court);
 								console.log(temp_all_team);
 								
 							}
