@@ -55,6 +55,12 @@ var team_list = {
 	P:"水利",
 	
 }
+var court_list= {
+	1:"光復四場",
+	2:"光復五場",
+	3:"光復高場",
+	
+}
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -2335,7 +2341,7 @@ app.use(bodyParser.urlencoded({
 
 var push_team_1;
 var push_team_2;
-var push_referee;
+var push_court;
 var ii;
 app.post('/', function(req, res){
     console.log('POST /');
@@ -2369,9 +2375,10 @@ app.post('/', function(req, res){
 								//console.log(items[items_i].team2);
 								push_team_1=items[items_i].team1;
 								push_team_2=items[items_i].team2;
-								push_referee=items[items_i].referee;
+								push_referee=items[items_i].court;
 								temp_all_team.push(push_team_1);
 								temp_all_team.push(push_team_2);
+								temp_all_team.push(push_court);
 								console.log(temp_all_team);
 								
 							}
@@ -2393,7 +2400,7 @@ app.post('/', function(req, res){
 												console.log("get_userid:" + items[items_i].User_id);
 												get_userid=items[items_i].User_id;
 												recipientId=get_userid;
-												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time ) ;
+												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time + "場地:"+ court_list[push_court]) ;
 																								
 											}else{
 												console.log("NOT_FOUND_USERID");
