@@ -2375,7 +2375,7 @@ app.post('/', function(req, res){
 								//console.log(items[items_i].team2);
 								push_team_1=items[items_i].team1;
 								push_team_2=items[items_i].team2;
-								push_referee=items[items_i].court;
+								push_court=items[items_i].court;
 								temp_all_team.push(push_team_1);
 								temp_all_team.push(push_team_2);
 								temp_all_team.push(push_court);
