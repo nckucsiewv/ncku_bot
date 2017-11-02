@@ -58,7 +58,7 @@ var team_list = {
 var court_list= {
 	1:"光復四場",
 	2:"光復五場",
-	3:"光復高場",
+	3:"光復高場東",
 	
 }
 
@@ -2400,7 +2400,7 @@ app.post('/', function(req, res){
 												console.log("get_userid:" + items[items_i].User_id);
 												get_userid=items[items_i].User_id;
 												recipientId=get_userid;
-												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time + "場地:"+ court_list[push_court]) ;
+												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time + "\n"+ "場地:"+ court_list[push_court]) ;
 																								
 											}else{
 												console.log("NOT_FOUND_USERID");
