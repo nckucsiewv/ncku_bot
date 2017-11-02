@@ -2335,6 +2335,7 @@ app.use(bodyParser.urlencoded({
 
 var push_team_1;
 var push_team_2;
+var push_referee;
 var ii;
 app.post('/', function(req, res){
     console.log('POST /');
@@ -2368,6 +2369,7 @@ app.post('/', function(req, res){
 								//console.log(items[items_i].team2);
 								push_team_1=items[items_i].team1;
 								push_team_2=items[items_i].team2;
+								push_referee=items[items_i].referee;
 								temp_all_team.push(push_team_1);
 								temp_all_team.push(push_team_2);
 								console.log(temp_all_team);
