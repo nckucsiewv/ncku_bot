@@ -312,8 +312,7 @@ function receivedMessage(event) {
 					db.close(); //關閉連線
 					});//查詢
 				
-				});
-		
+				});		
 			}
 		});
 		sendTextMessage(senderID, "訂閱資訊成功囉^0^");
