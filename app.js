@@ -35,6 +35,26 @@ var net =new brain.NeuralNetwork(
 var count_team ;
 //receivedPostback
 var subscription_team;
+//宣告隊伍對應代號
+var team_list = {
+	A:"藥學",
+	B:"會計",
+	C:"電機",
+	D:"材料",
+	E:"資訊",
+	F:"化工",
+	G:"醫學",
+	H:"法律",
+	I:"歷史",
+	J:"航太",
+	K:"土木",
+	L:"建築",
+	M:"經濟",
+	N:"工資管",
+	O:"工設",
+	P:"水利",
+	
+}
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -806,8 +826,681 @@ function receivedMessage(event) {
         sendQuickReply(senderID);
         break;        
       case '資訊':
-         sendTimeTextMessage(senderID, messageText);
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "E") || (items[var_i].team2 == "E") || (items[var_i].referee == "E")){
+									
+									/*time=items[var_i].time;
+									team_1=items[var_i].team1;
+									team_2=items[var_i].team2;
+									referee=items[var_i].referee;
+									score=items[var_i].score;
+									
+									temp_team.push(time);
+									temp_team.push(team_1);
+									temp_team.push(team_2);
+									temp_team.push(score);
+									temp_team.push(referee);*/
+								
+									temp_team.push(items[var_i]);
+									
+									//console.log(temp_team[0].time);
+									//console.log(temp_team[0].team1);
+									
+								}else{
+									//console.log("not_found");
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
         break;
+	  case '藥學':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "A") || (items[var_i].team2 == "A") || (items[var_i].referee == "A")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '會計':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "B") || (items[var_i].team2 == "B") || (items[var_i].referee == "B")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '電機':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "C") || (items[var_i].team2 == "C") || (items[var_i].referee == "C")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+    case '材料':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "D") || (items[var_i].team2 == "D") || (items[var_i].referee == "D")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '化工':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "F") || (items[var_i].team2 == "F") || (items[var_i].referee == "F")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '醫學':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "G") || (items[var_i].team2 == "G") || (items[var_i].referee == "G")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '法律':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "H") || (items[var_i].team2 == "H") || (items[var_i].referee == "H")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '歷史':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "I") || (items[var_i].team2 == "I") || (items[var_i].referee == "I")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '航太':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "J") || (items[var_i].team2 == "J") || (items[var_i].referee == "J")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '土木':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "K") || (items[var_i].team2 == "K") || (items[var_i].referee == "K")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '建築':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "L") || (items[var_i].team2 == "L") || (items[var_i].referee == "L")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '經濟':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "M") || (items[var_i].team2 == "M") || (items[var_i].referee == "M")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '工資管':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "N") || (items[var_i].team2 == "N") || (items[var_i].referee == "N")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '工設':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "O") || (items[var_i].team2 == "O") || (items[var_i].referee == "O")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+	case '水利':
+         //sendTimeTextMessage(senderID, messageText);
+			 MongoClient.connect("mongodb://140.116.245.243:27017/NCKUVB", function(err, db) {
+			
+				if(!err) {
+					console.log("We are connected mongodb");
+					db.collection('match',function(err,collection){
+												 
+						collection.find({}).toArray(function(err,items){
+							if(err) throw err;
+							var var_i,var_ii,team_1,team_2,referee,time,score;
+							var temp_team = [];
+							
+							for(var_i=0;var_i<=34;var_i ++){
+								
+								if((items[var_i].team1 == "P") || (items[var_i].team2 == "P") || (items[var_i].referee == "P")){
+									
+									temp_team.push(items[var_i]);
+								}
+							}
+							console.log(temp_team);
+							var msg = "";
+							for(var_i=0;var_i<(temp_team.length);var_i ++){
+								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
+									temp_team[var_i].time +
+									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"比分:"+""+temp_team[var_i].score+
+									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
+								
+							}
+							sendTextMessage(senderID,msg);
+							db.close(); //關閉連線
+						});
+							
+					});
+				
+					
+					
+				}
+		});	
+        break;
+		
       case '謝謝':
          sendThankTextMessage(senderID, messageText);
         break;
@@ -1708,12 +2401,12 @@ app.post('/', function(req, res){
 								});
 							
 					
-						});//查詢隊伍名稱的user_id	
+						});
 						
 						db.close(); //關閉連線
 					});
 						
-				});//查詢db內的post日期與date相同之條件的隊伍名稱
+				});
 			
 				
 				
