@@ -7,7 +7,6 @@ const
   https = require('https'),  
   request = require('request');
 
-
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
    
