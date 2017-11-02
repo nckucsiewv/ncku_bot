@@ -2420,7 +2420,7 @@ app.post('/', function(req, res){
 	
 	sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time ) ;*/
 	
-	var website_url="https://bot-web.herokuapp.com/";
+	var website_url="https://bot-web.herokuapp.com/:3000";
 	res.redirect(website_url);
 });
 function get_training_small_data_v2(){
