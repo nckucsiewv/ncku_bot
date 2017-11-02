@@ -828,7 +828,8 @@ function receivedMessage(event) {
         break;
 
       case 'quick reply':
-        sendQuickReply(senderID);
+        
+		    
         break;        
       case '資訊':
          //sendTimeTextMessage(senderID, messageText);
@@ -1594,6 +1595,7 @@ function receivedPostback(event) {
 	if(payload == "subscription"){
 	
 		sendQuickReply(senderID);
+		sendImageMessage(senderID);
 	}
 	if(payload == "query"){
 		
