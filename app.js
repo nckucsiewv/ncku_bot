@@ -2419,7 +2419,7 @@ app.post('/', function(req, res){
 												
 												sendTextMessage(recipientId, "訂閱隊伍的下場賽程\n時間:" + post_time +"\n"+"對手:"+team_list[temp_all_team[ii+1]]+"\n"+"場地:"+court_list[temp_all_court[ii/2]] ) ;
 											}
-											else if(temp_all_team[ii] == items[items_i].Name){
+											if(temp_all_team[ii] == items[items_i].Name){
 												console.log("get_userid:" + items[items_i].User_id);
 												get_userid=items[items_i].User_id;
 												recipientId=get_userid;
