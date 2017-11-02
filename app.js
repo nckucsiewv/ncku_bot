@@ -1593,9 +1593,10 @@ function receivedPostback(event) {
 		sendImageMessage(senderID);
 	}
 	if(payload == "subscription"){
-	
-		sendQuickReply(senderID);
+		
 		sendImageMessage(senderID);
+		sendQuickReply(senderID);
+		
 	}
 	if(payload == "query"){
 		
