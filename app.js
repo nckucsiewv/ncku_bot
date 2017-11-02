@@ -876,6 +876,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -917,6 +918,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -958,6 +960,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -999,6 +1002,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1040,6 +1044,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1081,6 +1086,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1122,6 +1128,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1163,6 +1170,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1204,6 +1212,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1245,6 +1254,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1286,6 +1296,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1327,6 +1338,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1368,6 +1380,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1409,6 +1422,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1450,6 +1464,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -1491,6 +1506,7 @@ function receivedMessage(event) {
 								msg += "\n"+"第"+temp_team[var_i].date +"天"+"\n"+
 									temp_team[var_i].time +
 									"\n"+team_list[temp_team[var_i].team1]+""+"v.s."+""+team_list[temp_team[var_i].team2]+
+									"\n"+"場地:"+""+court_list[temp_team[var_i].court]+
 									"\n"+"比分:"+""+temp_team[var_i].score+
 									"\n"+"裁判:"+""+team_list[temp_team[var_i].referee]+"\n";
 								
@@ -2360,7 +2376,7 @@ app.post('/', function(req, res){
 				console.log("We are connected mongodb");
 				db.collection('match',function(err,collection){
 					var temp_all_team = [];
-                     
+                    var temp_all_court = []; 
 					collection.find({}).toArray(function(err,items){
 						if(err) throw err;
 						
@@ -2395,15 +2411,22 @@ app.post('/', function(req, res){
 									
 									for(items_i=0;items_i<items.length;items_i ++){
 										
-										for(ii=0;ii<temp_all_team.length;ii++){
+										for(ii=0;ii<temp_all_team.length;ii+=2){
 											if(temp_all_team[ii] == items[items_i].Name){
 												console.log("get_userid:" + items[items_i].User_id);
 												get_userid=items[items_i].User_id;
 												recipientId=get_userid;
-												sendTextMessage(recipientId, "訂閱隊伍的下場賽程時間:" + post_time + "\n"+ "場地:"+ court_list[push_court]) ;
+												
+												sendTextMessage(recipientId, "訂閱隊伍的下場賽程\n時間:" + post_time +"\n"+"對手:"+team_list[temp_all_team[ii+1]]+"\n"+"場地:"+court_list[temp_all_court[ii/2]] ) ;
+											}
+											else if(temp_all_team[ii] == items[items_i].Name){
+												console.log("get_userid:" + items[items_i].User_id);
+												get_userid=items[items_i].User_id;
+												recipientId=get_userid;
+												
+												sendTextMessage(recipientId, "訂閱隊伍的下場賽程\n時間:" + post_time +"\n"+"對手:"+team_list[temp_all_team[ii]]+"\n"+"場地:"+court_list[temp_all_court[ii/2]] ) ;
+												
 																								
-											}else{
-												console.log("NOT_FOUND_USERID");
 											}
 										}
 									}
