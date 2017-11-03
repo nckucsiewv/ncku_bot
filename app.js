@@ -1532,7 +1532,7 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "輸入Hi   將有機器人為您服務＃￣▽￣＃");
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received");
+    sendTextMessage(senderID, "這個我看不懂啦(>^ω^<)");
   }
 }
 
