@@ -844,7 +844,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "E") || (items[var_i].team2 == "E") || (items[var_i].referee == "E")){
 									
