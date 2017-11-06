@@ -905,7 +905,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "A") || (items[var_i].team2 == "A") || (items[var_i].referee == "A")){
 									
@@ -947,7 +947,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "B") || (items[var_i].team2 == "B") || (items[var_i].referee == "B")){
 									
@@ -989,7 +989,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "C") || (items[var_i].team2 == "C") || (items[var_i].referee == "C")){
 									
@@ -1031,7 +1031,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "D") || (items[var_i].team2 == "D") || (items[var_i].referee == "D")){
 									
@@ -1073,7 +1073,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "F") || (items[var_i].team2 == "F") || (items[var_i].referee == "F")){
 									
@@ -1115,7 +1115,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "G") || (items[var_i].team2 == "G") || (items[var_i].referee == "G")){
 									
@@ -1157,7 +1157,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "H") || (items[var_i].team2 == "H") || (items[var_i].referee == "H")){
 									
@@ -1199,7 +1199,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "I") || (items[var_i].team2 == "I") || (items[var_i].referee == "I")){
 									
@@ -1241,7 +1241,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "J") || (items[var_i].team2 == "J") || (items[var_i].referee == "J")){
 									
@@ -1283,7 +1283,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "K") || (items[var_i].team2 == "K") || (items[var_i].referee == "K")){
 									
@@ -1325,7 +1325,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "L") || (items[var_i].team2 == "L") || (items[var_i].referee == "L")){
 									
@@ -1367,7 +1367,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "M") || (items[var_i].team2 == "M") || (items[var_i].referee == "M")){
 									
@@ -1409,7 +1409,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "N") || (items[var_i].team2 == "N") || (items[var_i].referee == "N")){
 									
@@ -1451,7 +1451,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "O") || (items[var_i].team2 == "O") || (items[var_i].referee == "O")){
 									
@@ -1493,7 +1493,7 @@ function receivedMessage(event) {
 							var var_i,var_ii,team_1,team_2,referee,time,score;
 							var temp_team = [];
 							
-							for(var_i=0;var_i<=46;var_i ++){
+							for(var_i=0;var_i<=items.length-1;var_i ++){
 								
 								if((items[var_i].team1 == "P") || (items[var_i].team2 == "P") || (items[var_i].referee == "P")){
 									
