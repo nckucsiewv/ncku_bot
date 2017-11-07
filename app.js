@@ -1736,9 +1736,8 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url:"https://imgur.com/c6779h8.jpg"
-	  //url:"https://imgur.com/3QlOjoR.jpg"
-		  //url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
+          url:"https://imgur.com/T2tisFD.jpg"
+	  //url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LX0tn8C_PW1cXBep05JSmrwXpAfCNjByCfEDiHKbwIufubP5Qg"
         }
       }
     }
