@@ -2385,7 +2385,7 @@ app.post('/', function(req, res){
 						console.log("post_time:" + post_time);
 						console.log("post_date:" + post_date);
 						
-						for(items_i=0;items_i<=34;items_i ++){
+						for(items_i=0;items_i<=items.length;items_i ++){
 							
 							if((post_time == items[items_i].time) && (post_date == items[items_i].date)){
 								 
